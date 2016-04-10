@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Visual iTunes</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+
+  <!-- JavaScript -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./js/main.js" type="text/javascript"></script>
+</head>
+<body>
+  <div class="container">
+ 
+		<h1>Visual iTunes</h1>
+		<div class="row">
+			<div class="left-info-sec eight columns">
+				<p class="tagline">Display statistics about your iTunes library in a beautiful way</p>
+				<p>Use this to learn more about your iTunes library beyond what iTunes is normally capable of. It displays statistics and visualizations about your iTunes library using your iTunes library XML file.</p>
+				<p><strong>To use:</strong> In iTunes, go to File->Library->Export to get an iTunes library XML file. Enter it here to visualize your library.</p>
+				<p>No information about your library is stored; all data and calculations are local to your browser.</p>
+				<p>Built at <a href="http://mchacks.io">McHacks 2016</a>. View this on <a href="https://github.com/theposter/libraryStats">Github</a>.</p>
+			</div>
+			<div class="right-info-sec four columns">&nbsp;</div>
+		</div>
+
+		<div class="main twelve columns">
+
+			<input id="includePodcasts" type="checkbox"/> Include podcasts
+
+			<br/><br/>
+
+			<input id="fileupload" name="myfile" type="file" accept="xml" onchange="checkFile();" />
+
+			<br/><br/>
+			
+			<div class="submit">
+				<button id="submit-button" onclick="parse(); move(5);">Submit</button>
+				<div class="submit-result"></div>
+			</div>
+
+			<br/>
+			<div id="myProgress">
+			  <div id="myBar"></div>
+			</div>
+			<br/>
+
+		    <h3 id="yearGraph"></h3>
+		    <div class="graph" id="displayYearGraph"></div>
+		    <br>
+		    <h3 id="genreGraph"></h3>
+		    <div class="graph" id="displayGenreGraph"></div>
+		    <br>
+		    <h3 id="artistGraph"></h3>
+		    <div class="graph" id="displayArtistGraph"></div>
+
+		    <h4 id="topSong"> </h4>
+
+			<p id="someElement"></p>
+			<p id="anotherElement"></p>
+		</div>
+
+  </div>
+
+</body>
+</html>
